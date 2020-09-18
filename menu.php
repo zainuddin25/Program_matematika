@@ -1,36 +1,63 @@
-<?php 
+<?php
 
-$data_menu=["Perkalian","Pembagian"];
+// Banner Aplikasi
+
+//Daftar Menu
+
+$data_menu=['perkalian','pembagian','penjumlahan'];
+
+// Loop Aplikasi
 
 $berhenti=true;
 
 while($berhenti)
 {
-    // $nomor=1;
-    foreach($data_menu as $data)
+
+    // Menampilkan Nomor dan menu
+
+    $nomor=1;
+    foreach($data_menu as $menu)
     {
-        // echo $nomor.$data."\n";
-        // $nomor++;
+        echo $nomor.".".$menu."\n";
+        $nomor++;
     }
 
-    $pilih_menu=readline("Pili menu :");
+    // User memilih daftar menu
+
+    $pilih_menu=readline("Pilih menu :");
+
+    // Hasil dari user memilih menu
 
     if($pilih_menu==1)
     {
-        // Fitur Perkalian
-        echo "Perkalian";
+        // Code perkalian masukkan sini
+        
+        // include "perkalian.php";
+
     }elseif($pilih_menu==2)
     {
-        // Fitur Pembagian
-        include "bagi.php";
-    }else
+        // Code perkalian masukkan sini
+        echo "pembagian\n";
+        
+    }elseif($pilih_menu==3)
     {
-        echo "Anda tidak memilih menu";
+        echo "Penjumlahan\n";
+
+    }else{
+
+        // Jika tidak memilih dengan benar program keluar
+
+        echo "Anda tidak memilih menu dengan benar\n";
+        break;
     }
 
-    $ulangi=readline("ulagi lagi");
+    // Tanya user mau ulang lagi atau tidak
+
+    $ulangi=readline("Ulangi Lagi ");
+
     if($ulangi=="no")
     {
         $berhenti=false;
     }
+
 }
